@@ -6,6 +6,8 @@
   "author": "Nour Elhouda Dhaouadi",
   "license": "Nour Elhouda Dhaouadi",
   "dependencies": {
+    "axios": "^0.21.1",
+    "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "tailwindcss": "^2.0.3"
