@@ -6,6 +6,6 @@ export default createAsyncThunk(
   'users/getUsers',
   async ({ nationality, size }) => {
     const response = await getUsers({ nationality, size })
-    return convertArrayToObject(response.data.results, 'username')
+    return convertArrayToObject(response.data.results, 'email')
   }
 )
