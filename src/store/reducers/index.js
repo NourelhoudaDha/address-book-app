@@ -1,3 +1,3 @@
 import userReducer from './users.reducer'
-
-export { userReducer }
+import settingReducer from './settings.reducer'
+export { userReducer, settingReducer }

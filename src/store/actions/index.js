@@ -1,3 +1,3 @@
 import getUsers from './users.actions'
-
-export { getUsers }
+import updateNationality from './settings.actions'
+export { getUsers, updateNationality }
