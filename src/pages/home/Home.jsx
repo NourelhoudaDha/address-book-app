@@ -14,7 +14,7 @@ const Home = () => {
     dispatch(getUsers({ size: 50, nationality: 'CH' }))
   }, [dispatch])
 
-  const memoizedHandleClick = useCallback(() => {
+  const memoizedGetUser = useCallback(() => {
     dispatch(getUsers({ size: 50, nationality: 'CH' }))
   }, [])
 
@@ -22,7 +22,7 @@ const Home = () => {
     <div>
       <InfiniteScroll
         dataLength={usersList.length}
-        next={memoizedHandleClick}
+        next={memoizedGetUser}
         hasMore={usersList.length < MAX_LOADED_USERS}
         loader={<h4>Loading...</h4>}
       >
