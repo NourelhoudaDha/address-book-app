@@ -9,7 +9,11 @@ import {
   selectNationality,
 } from '../../store/selectors'
 import UserItem from '../../components/userItem/UserItem.jsx'
-import { MAX_LOADED_USERS } from '../../constants'
+import {
+  MAX_LOADED_USERS,
+  MAX_LOADING_LENGTH,
+  DEFAULT_NATIONALITIY,
+} from '../../constants'
 
 const Home = () => {
   const history = useHistory()
@@ -20,16 +24,31 @@ const Home = () => {
 
   const selectedNationality = useSelector(selectNationality)
   const searchedUser = useSelector(getSearchedUser(searched))
+
   const usersList = searched
     ? searchedUser
     : Object.keys(users).map((key) => users[key])
 
   useEffect(() => {
-    dispatch(getUsers({ size: 50, nationality: 'GB' }))
+    dispatch(
+      getUsers({
+        size: MAX_LOADING_LENGTH,
+        nationality: selectedNationality
+          ? selectedNationality
+          : DEFAULT_NATIONALITIY,
+      })
+    )
   }, [dispatch, selectedNationality])
 
   const memoizedGetUser = useCallback(() => {
-    dispatch(getUsers({ size: 50, nationality: 'GB' }))
+    dispatch(
+      getUsers({
+        size: MAX_LOADING_LENGTH,
+        nationality: selectedNationality
+          ? selectedNationality
+          : DEFAULT_NATIONALITIY,
+      })
+    )
   }, [])
 
   const memoizedSearch = useCallback((event) => {

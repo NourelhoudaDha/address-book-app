@@ -40,7 +40,9 @@ const Settings = () => {
         </button>
       </header>
       <p className='text-left md:text-center'>
-        Selected Nationality : {selectedNationality}
+        {selectedNationality
+          ? 'Selected nationality : ' + selectedNationality
+          : 'Please select a nationality'}
       </p>
       <div className='grid grid-cols-2  gap-4'>
         {NATIONALITIES.map((item, index) => (
