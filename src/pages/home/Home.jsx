@@ -7,6 +7,8 @@ import {
   selectUsers,
   getSearchedUser,
   selectNationality,
+  selectErrorUsers,
+  isLoadingUsers,
 } from '../../store/selectors'
 import UserItem from '../../components/userItem/UserItem.jsx'
 import {
@@ -24,7 +26,8 @@ const Home = () => {
 
   const selectedNationality = useSelector(selectNationality)
   const searchedUser = useSelector(getSearchedUser(searched))
-
+  const loading = useSelector(isLoadingUsers)
+  const error = useSelector(selectErrorUsers)
   const usersList = searched
     ? searchedUser
     : Object.keys(users).map((key) => users[key])
@@ -110,7 +113,7 @@ const Home = () => {
         dataLength={usersList.length}
         next={memoizedGetUser}
         hasMore={usersList.length < MAX_LOADED_USERS && !searched}
-        loader={<h4>Loading...</h4>}
+        loader={loading && <h4>Loading...</h4>}
       >
         <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
           {usersList &&
@@ -126,6 +129,12 @@ const Home = () => {
             ))}
         </ul>
       </InfiniteScroll>
+      {!loading &&
+        error &&
+        usersList(<p className='text-left md:text-center'>Error Happened</p>)}
+      {!loading && !error && usersList && usersList.length === 0 && (
+        <p className='text-left md:text-center'>no results found</p>
+      )}
     </section>
   )
 }
