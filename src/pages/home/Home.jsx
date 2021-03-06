@@ -109,7 +109,7 @@ const Home = () => {
       <InfiniteScroll
         dataLength={usersList.length}
         next={memoizedGetUser}
-        hasMore={usersList.length < MAX_LOADED_USERS}
+        hasMore={usersList.length < MAX_LOADED_USERS && !searched}
         loader={<h4>Loading...</h4>}
       >
         <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
