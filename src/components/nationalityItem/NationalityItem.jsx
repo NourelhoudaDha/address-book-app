@@ -6,9 +6,12 @@ const NationalityItem = ({ onClick, value }) => {
     onClick(value)
   }, [])
   return (
-    <view type='text' onClick={memoizedUpdateNationality}>
-      {value}
-    </view>
+    <button
+      onClick={memoizedUpdateNationality}
+      className='hover:bg-light-blue-500 hover:border-transparent hover:shadow-lg group block rounded-lg p-4 border border-gray-200 flex items-center justify-center'
+    >
+      <div>{value}</div>
+    </button>
   )
 }
 
