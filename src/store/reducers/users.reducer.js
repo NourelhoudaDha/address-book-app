@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getUsers } from '../actions'
+import { getUsers, updateNationality } from '../actions'
 
 const usersSlice = createSlice({
   name: 'users',
@@ -21,6 +21,11 @@ const usersSlice = createSlice({
     [getUsers.rejected]: (state) => {
       state.loading = false
       state.error
+    },
+    [updateNationality]: (state) => {
+      state.loading = false
+      state.error = undefined
+      state.list = {}
     },
   },
 })
