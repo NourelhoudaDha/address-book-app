@@ -20,10 +20,10 @@ const Home = () => {
 
   const selectedNationality = useSelector(selectNationality)
   const searchedUser = useSelector(getSearchedUser(searched))
-
   const usersList = searched
-    ? Object.keys(searchedUser).map((key) => users[key])
+    ? searchedUser
     : Object.keys(users).map((key) => users[key])
+
   useEffect(() => {
     dispatch(getUsers({ size: 50, nationality: 'GB' }))
   }, [dispatch, selectedNationality])
