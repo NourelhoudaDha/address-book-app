@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserItem should take a snapshot 1`] = `
+<DocumentFragment>
+  <li>
+    <a
+      class="hover:bg-light-blue-500 hover:border-transparent hover:shadow-lg group block rounded-lg p-4 border border-gray-200"
+    >
+      <img
+        class="w-7 h-7 rounded-full bg-gray-100 border-2 border-white"
+        height="48"
+        src="https://randomuser.me/api/portraits/thumb/women/43.jpg"
+        width="48"
+        x-for="user in item.users"
+      />
+      <dl
+        class="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center"
+      >
+        <div>
+          <dt
+            class="sr-only"
+          >
+            Name
+          </dt>
+          <dd
+            class="group-hover:text-white leading-6 font-medium text-black"
+          >
+            Nour Elhouda Dhaouadi
+          </dd>
+        </div>
+        <div>
+          <dt
+            class="sr-only"
+          >
+            Username
+          </dt>
+          <dd
+            class="group-hover:text-light-blue-200 text-sm font-medium sm:mb-4 lg:mb-0 xl:mb-4"
+          >
+            username
+          </dd>
+        </div>
+        <div>
+          <dt
+            class="sr-only"
+          >
+            Email
+          </dt>
+          <dd
+            class="group-hover:text-light-blue-200 text-sm font-medium sm:mb-4 lg:mb-0 xl:mb-4"
+          >
+            dhaouadi.nour.elhouda@gmail.com
+          </dd>
+        </div>
+      </dl>
+    </a>
+  </li>
+</DocumentFragment>
+`;

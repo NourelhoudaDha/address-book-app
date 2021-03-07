@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 const UserItem = ({ thumbnail, firstName, lastName, username, email }) => (
-  <li x-for='item in items'>
+  <li>
     <a className='hover:bg-light-blue-500 hover:border-transparent hover:shadow-lg group block rounded-lg p-4 border border-gray-200'>
       <img
         src={thumbnail}
