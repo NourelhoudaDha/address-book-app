@@ -12,6 +12,7 @@ const Settings = () => {
   const selectedNationality = useSelector(selectNationality)
   const memoizedUpdateNationality = useCallback((nationality) => {
     dispatch(updateNationality(nationality))
+    localStorage.setItem('nationality', nationality)
   }, [])
 
   const memoizedGoToHome = useCallback(() => {
